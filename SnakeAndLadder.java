@@ -16,10 +16,10 @@ public class SnakeAndLadder
 		return randomNumber;
 	}
 
-	//UC-3 //UC-5  // UC-6
+	//UC-3 //UC-5 // UC-6
    void checkOption(int dieNumber)
 	{
-		String option=null;
+		String option = null;
 		int randomNumber = (int)Math.floor(Math.random()*10)%3;
 
 		switch(randomNumber)
@@ -58,7 +58,6 @@ public class SnakeAndLadder
 	}
 
 	//UC-7
-
 	void checkOption(int dieNumber , String player)
    {
       String option = null;
@@ -113,7 +112,6 @@ public class SnakeAndLadder
 	{
 		int player1DieNumber=0;
 		int player2DieNumber=0;
-		String option = null;
 
 		while ( player1Position < maxPosition && player2Position < maxPosition )
 		{
