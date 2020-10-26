@@ -17,11 +17,10 @@ public class SnakeAndLadder
 	}
 
 	//UC-3 //UC-5 // UC-6
-   void checkOption(int dieNumber)
+  	void checkOption(int dieNumber)
 	{
 		String option = null;
 		int randomNumber = (int)Math.floor(Math.random()*10)%3;
-
 		switch(randomNumber)
 		{
 			case 0:
@@ -43,7 +42,7 @@ public class SnakeAndLadder
 				position -= dieNumber;
 		}
 		System.out.println(" Option is :" +option);
-      System.out.println(" Current Position is : " +position+"\n");
+		System.out.println(" Current Position is : " +position+"\n");
 	}
 	
 	//UC-4
@@ -59,8 +58,8 @@ public class SnakeAndLadder
 
 	//UC-7
 	void checkOption(int dieNumber , String player)
-   {
-      String option = null;
+	{
+		String option = null;
 		String playerName = player;
 		int currentPosition = 0;
 
@@ -68,20 +67,19 @@ public class SnakeAndLadder
 			currentPosition = player1Position;
 		else
 			currentPosition = player2Position;
-
-      int randomNumber = (int)Math.floor(Math.random()*10)%3;
-
-      switch(randomNumber) 
-      {
+		int randomNumber = (int)Math.floor(Math.random()*10)%3;
+     
+		switch(randomNumber) 
+		{
 			case 0:
-         option = "No Play";
+			option = "No Play";
 			currentPosition = currentPosition;
 			break;
 
 			case 1:
 			option = "Ladder";
-         if ( (currentPosition + dieNumber) <= maxPosition )
-            currentPosition += dieNumber;
+			if ( (currentPosition + dieNumber) <= maxPosition )
+				currentPosition += dieNumber;
 			break;
 
 			default:
@@ -96,16 +94,16 @@ public class SnakeAndLadder
       System.out.println(" Current Position is : " +currentPosition+"\n");
 
 		if ( player.equalsIgnoreCase("Player1"))
-         player1Position = currentPosition;
-      else
-         player2Position = currentPosition;
+			player1Position = currentPosition;
+		else
+			player2Position = currentPosition;
 
 		if ( option.equalsIgnoreCase("Ladder") && currentPosition < maxPosition)
-         {
-            dieNumber = roleDieToGetNumber();
-            System.out.println("Die number of "+player+ "is : "+dieNumber);
-            checkOption(dieNumber , player);
-         }
+		{
+			dieNumber = roleDieToGetNumber();
+			System.out.println("Die number of "+player+ "is : "+dieNumber);
+			checkOption(dieNumber , player);
+		}
 	}
 
 	void gameWithTwoPlayers()
@@ -125,13 +123,13 @@ public class SnakeAndLadder
 			}
 
 			player2DieNumber = roleDieToGetNumber();
-         System.out.println(" Die number for player2 is : " +player2DieNumber);
-         checkOption(player2DieNumber, "Player2");
+			System.out.println(" Die number for player2 is : " +player2DieNumber);
+			checkOption(player2DieNumber, "Player2");
 			if ( player2Position == maxPosition )
-         {
-            System.out.println("Player2 Won !");
-            break;
-         }
+			{
+				System.out.println("Player2 Won !");
+				break;
+			}
 		}
 	}
 
@@ -139,7 +137,6 @@ public class SnakeAndLadder
 	{
 		SnakeAndLadder snakeAndLadder = new SnakeAndLadder();
 		snakeAndLadder.checkOptionTillMaxPosition();
-		
 		//UC-6
 		System.out.println("Number of times the die was played to win the game is : "+snakeAndLadder.diePlayCount);
 		System.out.println(" \nGame with two players ");
